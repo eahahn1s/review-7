@@ -15,7 +15,7 @@
 /* HTML and Body styles */
 
 html {
-   background: rgb(246, 174, 176) url(rb_background.png);
+   background: rgb(246, 174, 176) url(../images/rb_background.png);
    font-family: Verdana, Geneva, sans-serif;
    height: 100%;
 }

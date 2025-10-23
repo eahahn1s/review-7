@@ -17,14 +17,17 @@
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <title>Red Ball Pizza Customer Form</title>
-   <link href="rb_base.css" rel="stylesheet" />
-   <link href="rb_styles2.css" rel="stylesheet" />
+   <link href="./css/rb_base.css" rel="stylesheet" />
+   <link href="./css/rb_styles2.css" rel="stylesheet" />
+   <link href="./css/rb_forms2.css" rel="stylesheet" />
+   <link href="./css/rb_validate.css" rel="stylesheet" />
+   <script src="rb_formsubmit2.js"></script>
 </head>
 
 <body>
    <header>
-      <img src="rb_logo2.png" alt="Red Ball Pizza" id="logoimg" />
-      <nav> <a id="navicon" href="#"><img src="rb_navicon2.png" alt="" /></a>
+      <img src="./images/rb_logo2.png" alt="Red Ball Pizza" id="logoimg" />
+      <nav> <a id="navicon" href="#"><img src="./images/rb_navicon2.png" alt="" /></a>
          <ul>
             <li><a href="#">home</a></li>
             <li><a href="#">menu</a></li>
@@ -44,7 +47,38 @@
          values are marked by an asterisk (*). If you
          want to place your order over the phone, call us at
          <a href="tel:+13865557499">(386) 555-7499</a>.</p>
-         
+      <form action="http://www.example.com/redball/customer" method="post" >
+         <div>
+            <label for="name">Name*</label>
+            <input id="nameBox" name="custName" type="text" placeholder="First and Last Name" required />
+         </div>
+         <div>
+            <label for="Phone">Phone*</label>
+            <input id="phoneBox" name="custPhone" placeholder="(nnn) nnn-nnnn" required
+               pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{4}$" />
+         </div>
+         <div>
+            <label for="delivery">Delivery</label>
+                        <input name="foodHot" id="hYes" value="yes" type="radio" />
+                        <label for="pickup">Pickup</label>
+                        <input name="foodHot" id="hNo" value="no" type="radio" /> 
+            </select>
+         </div>
+         <fieldset id="deliveryInfo">
+            <legend>Delivery Options</legend>
+            <textarea name="delAddress" id="addressBox" placeholder="Enter delivery Address"></textarea>
+            <label for="delBox">Delivery Time (leave blank for earliest delivery)</label>
+            <input id="deliveryBox" name="deliveryTime" type="time" />
+            </fieldset>
+            <fieldset id="pickupInfo">
+            <legend>Pickup Options</legend>
+            <label for="pickupBox">Pickup Time (leave blank for earliest pickup)</label>
+            <input id="pickupBox" name="pickupTime" disabled type="time" />
+         </fieldset>
+         <div id="buttons">
+            <input type="submit" value="Begin Building you Order">
+         </div>
+      </form>  
          
    </section>
 
